@@ -49,6 +49,42 @@ Because the Pixoo 64 communicates over local unencrypted HTTP (`POST http://<pix
 
 ---
 
+## Authenticating & Injecting Tokens for Private GCS Buckets
+
+To sync visuals from a **non-public / private Google Cloud Storage bucket** (e.g. `gs://conference-pics/gravidots/...`), you can provision credentials from your workstation over ADB in three ways:
+
+### 1. Recommended One-Command Script (`./push-token.sh`)
+The bundled [push-token.sh](push-token.sh) script installs the APK, copies your local `gcloud` Application Default Credentials (`adc.json`) for automatic background token refresh, injects a fresh OAuth2 access token, and immediately starts a GCS cache sync:
+
+```bash
+# Uses active gcloud account automatically, or pass a specific account email:
+./push-token.sh you@example.com
+```
+
+### 2. Injecting an Access Token Directly via ADB Intent (No APK Reinstall)
+If the app is already installed on the connected phone, you can inject or rotate a fresh `gcloud` OAuth2 Bearer token at any time using `am start` extras:
+
+```bash
+ACCOUNT="you@example.com"
+TOKEN=$(gcloud auth print-access-token --account="$ACCOUNT")
+
+adb shell am start -n io.github.glaforge.jixoo.controller/.MainActivity \
+    --es gcs_account "$ACCOUNT" \
+    --es gcs_token "$TOKEN" \
+    --ez auto_sync true
+```
+
+### 3. Long-Lived Unattended Refresh (`files/adc.json`)
+Short-lived OAuth2 access tokens expire after 1 hour. Pushing your local `adc.json` (`~/.config/gcloud/legacy_credentials/<ACCOUNT>/adc.json`) into the app's sandbox allows [GcsCacheManager.kt](app/src/main/java/io/github/glaforge/jixoo/controller/gcs/GcsCacheManager.kt) to automatically exchange refresh tokens for new access tokens for days/weeks without reconnecting USB:
+
+```bash
+ADC_FILE="$HOME/.config/gcloud/legacy_credentials/${ACCOUNT}/adc.json"
+adb shell "run-as io.github.glaforge.jixoo.controller mkdir -p files"
+cat "$ADC_FILE" | adb shell "run-as io.github.glaforge.jixoo.controller sh -c 'cat > files/adc.json'"
+```
+
+---
+
 ## Building & Deploying via ADB
 
 ```bash
