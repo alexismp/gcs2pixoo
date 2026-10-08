@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.glaforge.jixoo.controller
+package dev.gcs2pixoo
 
 import android.accounts.AccountManager
 import android.app.Activity
@@ -115,11 +115,11 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import io.github.glaforge.jixoo.controller.model.ImageSourceType
-import io.github.glaforge.jixoo.controller.model.SlideshowConfig
-import io.github.glaforge.jixoo.controller.ui.PixooLedMatrixPreview
-import io.github.glaforge.jixoo.controller.ui.SlideshowUiState
-import io.github.glaforge.jixoo.controller.ui.SlideshowViewModel
+import dev.gcs2pixoo.model.ImageSourceType
+import dev.gcs2pixoo.model.SlideshowConfig
+import dev.gcs2pixoo.ui.PixooLedMatrixPreview
+import dev.gcs2pixoo.ui.SlideshowUiState
+import dev.gcs2pixoo.ui.SlideshowViewModel
 import kotlin.math.roundToInt
 
 private val PixooDarkColorScheme = darkColorScheme(

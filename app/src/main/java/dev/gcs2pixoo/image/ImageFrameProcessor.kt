@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.glaforge.jixoo.controller.image
+package dev.gcs2pixoo.image
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

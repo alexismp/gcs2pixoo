@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "PixooSlideshowController"
+rootProject.name = "gcs2pixoo"
 include(":app")

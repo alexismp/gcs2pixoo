@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.glaforge.jixoo.controller.ui
+package dev.gcs2pixoo.ui
 
 import android.app.Activity
 import android.app.Application
@@ -21,15 +21,15 @@ import android.net.Uri
 import androidx.documentfile.provider.DocumentFile
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import io.github.glaforge.jixoo.controller.discovery.DiscoveredPixooDevice
-import io.github.glaforge.jixoo.controller.discovery.PixooDiscovery
-import io.github.glaforge.jixoo.controller.gcs.GcsCacheManager
-import io.github.glaforge.jixoo.controller.image.ImageFrameProcessor
-import io.github.glaforge.jixoo.controller.image.ProcessedMedia
-import io.github.glaforge.jixoo.controller.model.ImageSourceType
-import io.github.glaforge.jixoo.controller.model.SlideshowConfig
-import io.github.glaforge.jixoo.controller.model.SlideshowPreferences
-import io.github.glaforge.jixoo.controller.network.PixooHttpClient
+import dev.gcs2pixoo.discovery.DiscoveredPixooDevice
+import dev.gcs2pixoo.discovery.PixooDiscovery
+import dev.gcs2pixoo.gcs.GcsCacheManager
+import dev.gcs2pixoo.image.ImageFrameProcessor
+import dev.gcs2pixoo.image.ProcessedMedia
+import dev.gcs2pixoo.model.ImageSourceType
+import dev.gcs2pixoo.model.SlideshowConfig
+import dev.gcs2pixoo.model.SlideshowPreferences
+import dev.gcs2pixoo.network.PixooHttpClient
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers

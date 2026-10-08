@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "io.github.glaforge.jixoo.controller"
+    namespace = "dev.gcs2pixoo"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "io.github.glaforge.jixoo.controller"
+        applicationId = "dev.gcs2pixoo"
         minSdk = 26
         targetSdk = 34
         versionCode = 1

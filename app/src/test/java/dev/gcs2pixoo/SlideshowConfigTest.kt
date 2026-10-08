@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.glaforge.jixoo.controller
+package dev.gcs2pixoo
 
-import io.github.glaforge.jixoo.controller.gcs.GcsCacheManager
-import io.github.glaforge.jixoo.controller.image.ImageFrameProcessor
-import io.github.glaforge.jixoo.controller.model.SlideshowConfig
+import dev.gcs2pixoo.gcs.GcsCacheManager
+import dev.gcs2pixoo.image.ImageFrameProcessor
+import dev.gcs2pixoo.model.SlideshowConfig
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull

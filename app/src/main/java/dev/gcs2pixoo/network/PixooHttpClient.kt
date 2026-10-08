@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.glaforge.jixoo.controller.network
+package dev.gcs2pixoo.network
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

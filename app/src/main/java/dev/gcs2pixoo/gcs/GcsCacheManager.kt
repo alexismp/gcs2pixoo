@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.glaforge.jixoo.controller.gcs
+package dev.gcs2pixoo.gcs
 
 import android.accounts.Account
 import android.accounts.AccountManager
 import android.app.Activity
 import android.content.Context
-import io.github.glaforge.jixoo.controller.image.ImageFrameProcessor
+import dev.gcs2pixoo.image.ImageFrameProcessor
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONObject

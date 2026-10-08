@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.github.glaforge.jixoo.controller.discovery
+package dev.gcs2pixoo.discovery
 
-import io.github.glaforge.jixoo.controller.network.PixooHttpClient
+import dev.gcs2pixoo.network.PixooHttpClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll

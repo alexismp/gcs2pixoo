@@ -68,7 +68,7 @@ If the app is already installed on the connected phone, you can inject or rotate
 ACCOUNT="you@example.com"
 TOKEN=$(gcloud auth print-access-token --account="$ACCOUNT")
 
-adb shell am start -n io.github.glaforge.jixoo.controller/.MainActivity \
+adb shell am start -n dev.gcs2pixoo/.MainActivity \
     --es gcs_account "$ACCOUNT" \
     --es gcs_token "$TOKEN" \
     --ez auto_sync true
@@ -79,8 +79,8 @@ Short-lived OAuth2 access tokens expire after 1 hour. Pushing your local `adc.js
 
 ```bash
 ADC_FILE="$HOME/.config/gcloud/legacy_credentials/${ACCOUNT}/adc.json"
-adb shell "run-as io.github.glaforge.jixoo.controller mkdir -p files"
-cat "$ADC_FILE" | adb shell "run-as io.github.glaforge.jixoo.controller sh -c 'cat > files/adc.json'"
+adb shell "run-as dev.gcs2pixoo mkdir -p files"
+cat "$ADC_FILE" | adb shell "run-as dev.gcs2pixoo sh -c 'cat > files/adc.json'"
 ```
 
 ---
@@ -96,7 +96,7 @@ export ANDROID_HOME=~/Library/Android/sdk
 
 # Install & launch on connected Android phone
 adb install -r app/build/outputs/apk/debug/app-debug.apk
-adb shell am start -n io.github.glaforge.jixoo.controller/.MainActivity
+adb shell am start -n dev.gcs2pixoo/.MainActivity
 ```
 
 ---
